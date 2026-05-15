@@ -1,9 +1,6 @@
 # Visual Basic .NET Gaps
 
-- `vbnet-stakeholder.foundation-pending`: deterministic scaffold-only baseline exists, but runtime foundation has not started.
-- `vbnet-stakeholder.classic-six-pending`: the six dedicated baseline families are not implemented yet.
-- `vbnet-stakeholder.modern-core-pending`: the modern-core families are not implemented yet.
-- `vbnet-stakeholder.post-modern-core-pending`: later families remain grouped fallback work.
-- `vbnet-stakeholder.traceability-rows-pending`: first-push traceability rows are not populated yet.
-- `vbnet-stakeholder.codeql-activation-pending`: enable only if the language is supported after publication.
-- `vbnet-stakeholder.flake-lock-pending`: generate `flake.lock` once the scaffold baseline is stable.
+- `vbnet-stakeholder.live-provider-deferred`: full live-provider/runtime support is required eventually, but deferred to the second-pass provider rollout wave. Current behavior fails fast for `--experimental-provider`.
+- `vbnet-stakeholder.post-modern-core-grouped`: later families are present as explicit grouped fallback renderers, not dedicated per-family implementations in this deterministic-first tranche.
+- `vbnet-stakeholder.publication-held`: remote publication and upstream tracking remain blocked until governance and access are ready.
+- `vbnet-stakeholder.codeql-deferred`: enable language-specific CodeQL only if supported after publication.

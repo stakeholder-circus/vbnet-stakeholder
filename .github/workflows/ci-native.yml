@@ -2,14 +2,25 @@ name: ci-native
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 jobs:
-  scaffold-check:
-    runs-on: ubuntu-latest
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-dotnet@v4
         with:
-          python-version: '3.x'
-      - run: python3 scripts/validate_scaffold.py
+          dotnet-version: '10.0.x'
+      - name: Dotnet proof
+        run: dotnet --info
+      - name: Build
+        run: dotnet build --configuration Release
+      - name: Contract tests
+        shell: bash
+        run: bash tests/test_cli.sh

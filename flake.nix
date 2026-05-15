@@ -1,5 +1,5 @@
 {
-  description = "vbnet-stakeholder scaffold";
+  description = "vbnet-stakeholder deterministic first tranche";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
   outputs = { self, nixpkgs }:
     let
@@ -11,9 +11,11 @@
         in {
           check = pkgs.writeShellApplication {
             name = "check";
-            runtimeInputs = [ pkgs.python3 ];
+            runtimeInputs = [ pkgs.bash pkgs.dotnet-sdk pkgs.python3 ];
             text = ''
               python3 scripts/validate_scaffold.py
+              dotnet build --configuration Release
+              bash tests/test_cli.sh
             '';
           };
           default = self.packages.${system}.check;

@@ -1,5 +1,5 @@
-# Rust Language Specialties
+# Visual Basic .NET Language Specialties
 
-- Rust is the canonical scheduler and generator baseline.
-- Shared domain concepts are modeled explicitly so follower languages can port stable semantics instead of re-deriving them.
-- Rust remains the reference for deterministic seeded behavior and normalized JSON semantics.
+- Visual Basic .NET is useful for .NET estate parity, Windows-heavy maintenance environments, and legacy enterprise lanes.
+- The first tranche keeps IO at the CLI boundary and emits deterministic normalized JSON.
+- Provider/session automation is deferred so deterministic CI remains provider-free.

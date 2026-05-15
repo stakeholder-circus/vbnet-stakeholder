@@ -1,9 +1,10 @@
-# Rust Docker
+# Visual Basic .NET Docker
 
 ## Build and test
-- `docker build -t rust-stakeholder .`
-- `docker run --rm rust-stakeholder --list-values`
+- `docker build -t vbnet-stakeholder .`
+- `docker run --rm vbnet-stakeholder --list-values`
+- `docker run --rm vbnet-stakeholder --output-format json --focus-family code_analyzer --seed 123`
 
 ## Rationale
-- The image compiles and tests the Rust baseline before packaging the runtime binary.
-- Docker is the reproducible Linux gate; host and CI matrices still cover native OS behavior.
+- The builder stage restores, builds, and runs contract tests before publishing the VB.NET runtime.
+- Docker is the reproducible Linux gate; host checks still cover local .NET behavior.

@@ -1,16 +1,25 @@
-  # Visual Basic .NET Toolchain
+# Visual Basic .NET Toolchain
 
-  - State: scaffold-only next-20 prep
-  - Toolchain source: `built-in-dotnet10`
+- State: deterministic-first local validation complete
+- Toolchain source: `built-in-dotnet10`
 
-  ## Planned commands after promotion
-    - `dotnet --version`
+## Native commands
+- `dotnet --version`
 - `dotnet --list-sdks`
 - `dotnet --list-runtimes`
+- `python3 scripts/validate_scaffold.py`
+- `dotnet build --configuration Release`
+- `bash tests/test_cli.sh`
+- `dotnet run --no-build --project vbnet-stakeholder.vbproj -- --list-values`
 
-  ## Scaffold-time checks
-  - `python3 scripts/validate_scaffold.py`
-  - `/nix/var/nix/profiles/default/bin/nix --extra-experimental-features 'nix-command flakes' flake lock`
+## Docker commands
+- `docker build -t vbnet-stakeholder .`
+- `docker run --rm vbnet-stakeholder --list-values`
+- `docker run --rm vbnet-stakeholder --output-format json --focus-family platform_engineering --seed 123`
 
-  ## Current limitation
-  - Standardize on .NET 10 or Docker; older host runtimes are not available.
+## Nix
+- `/nix/var/nix/profiles/default/bin/nix --extra-experimental-features 'nix-command flakes' flake lock`
+- `/nix/var/nix/profiles/default/bin/nix --extra-experimental-features 'nix-command flakes' flake show`
+
+## Current limitation
+- Full live-provider/runtime support is deferred. The deterministic runtime fails fast for provider flags.

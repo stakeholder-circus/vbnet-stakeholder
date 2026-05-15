@@ -1,16 +1,16 @@
-# Rust Example Outputs
+# Visual Basic .NET Example Outputs
 
-## Security
+## Registry
 ```bash
-cargo run -- --dev-type security --jargon high --complexity extreme --alerts --seed 42
+dotnet run --project vbnet-stakeholder.vbproj -- --list-values
 ```
 
-## Blockchain
+## Classic six
 ```bash
-cargo run -- --dev-type blockchain --framework "rollup-mcp-gateway" --output-format json --seed 7
+dotnet run --project vbnet-stakeholder.vbproj -- --output-format json --focus-family code_analyzer --seed 42
 ```
 
-## Healthcare + charging + quantum crossover
+## Modern core
 ```bash
-cargo run -- --project "hospital-ocpp-quantum-control" --framework "mcp grpc" --jargon extreme --team --trace --seed 11
+dotnet run --project vbnet-stakeholder.vbproj -- --output-format json --focus-family platform_engineering --seed 7
 ```
